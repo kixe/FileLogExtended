@@ -263,7 +263,6 @@ class FileLogExtended extends FileLog {
      * 
      */
     protected function lockFile($fp, $maxTries = 5, $maxTriesDelay = 1000) {
-        return true;
         for($tries = 0; $tries <= $maxTries; $tries++) {
             if (!flock($fp, LOCK_EX|LOCK_NB, $wouldblock)) {    
                 if ($wouldblock) {
